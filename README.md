@@ -1,4 +1,4 @@
-# Themeforest Boilerplate [The Team Netgon]
+# Themeforest Boilerplate [The Team NetGon]
 Boilerplate for markup Themeforest HTML templates. Boilerplate with automatic build preview and production versions.<br>
 Including tools:
 - Template Engine Pug, Nunjucks, MJML.
