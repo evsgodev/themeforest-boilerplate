@@ -40,3 +40,6 @@ Local server http://localhost:8080/
 ```commandline
 npm run build
 ```
+
+#### Contacts
+https://themeforest.net/user/netgon
