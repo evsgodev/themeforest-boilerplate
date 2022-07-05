@@ -1,0 +1,73 @@
+$generate-sprites: true; // true or false;
+
+$breakpoints: (
+	'xs': 375px,
+	'sm': 576px,
+	'sm-tablet': 768px,
+	'md': 992px,
+	'lg-tablet': 1024px,
+	'lg': 1200px,
+	'xl': 1366px
+) !default;
+
+
+
+/* Variables */
+:root {
+    // Colors
+    --black: #202833;
+    --gray: #626263;
+    --gray-2: #A6B2BF;
+    --white: #ffffff;
+    --blue: #278AFE;
+    --red: #FF5E5E;
+
+    // Colors theme
+    --primary-color: var(--blue);
+    --secondary-color: var(--blue);
+	--text-color: var(--black);
+
+    /* Timing transitions */
+    --t-base: 0.2s ease-in-out;
+    --t-smooth: cubic-bezier(.215, .61, .355, 1);
+    --t-elastic: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    // Fonts
+    --font-size-base: 16px;
+    --font-family-default: 'Open Sans', sans-serif;
+    --font-family-secondary: 'Open Sans', sans-serif;
+    --font-feature: 'pnum' on, 'lnum' on;
+
+    /* Other */
+    --container-width: 1200px;
+    --container-gutter: 15px;
+    --header-height: 57px;
+
+	@media screen and (max-width: 1199px) {
+    }
+
+    @media screen and (max-width: 767px) {
+    }
+
+    @media screen and (max-width: 575px) {
+    }
+}
+
+@media (prefers-color-scheme: dark), (prefers-color-scheme: light) {
+	body {
+    	--text-color: var(--black);
+	}
+}
+
+/* Colors theme */
+html[data-theme='light'] {
+  --primary-color: var(--blue-color);
+}
+
+html[data-theme='dark'] {
+  --primary-color: var(--blue-color);
+}
+
+$theme-colors: (
+    theme: --primary-color
+);

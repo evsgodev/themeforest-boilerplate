@@ -1,0 +1,111 @@
+/* Base */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+
+    &,
+    &::before,
+    &::after {
+        box-sizing: border-box;
+    }
+}
+
+@-ms-viewport {
+    width: auto;
+}
+
+html,
+body {
+    -webkit-overflow-scrolling: touch;
+}
+
+html {
+    height: 100%;
+    font-size: var(--font-size-base);
+
+    &.rtl {
+        direction: rtl;
+		text-align: inherit;
+    }
+
+    @include media ('<lg-tablet') {
+        font-size: 92%;
+    }
+
+    @include media ('<sm-tablet') {
+        font-size: 86.5%;
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    margin: 0;
+    font: 400 1rem/1.5 var(--font-family-default);
+    font-feature-settings: var(--font-feature, normal);
+    font-variant: normal;
+    color: var(--text-color);
+    background-color: var(--white);
+    background-repeat: repeat;
+    background-position: 50% 0;
+    background-size: cover;
+    opacity: 0;
+    overflow: hidden;
+
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    }
+
+    &.load {
+        opacity: 1;
+        overflow: initial;
+        transition: var(--t-base);
+        transition-property: opacity;
+    }
+
+    .open-mobile-menu & {
+        overflow: hidden;
+    }
+}
+
+a,
+button {
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+button {
+    -webkit-appearance: none;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+img,
+embed,
+video {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    line-height: 1;
+    border: none;
+}
+
+svg {
+    display: inline-block;
+    line-height: 1;
+
+    &:not([fill="none"]) {
+        fill: currentColor;
+    }
+}
+
+picture {
+    flex-grow: 1;
+    border-radius: inherit;
+}

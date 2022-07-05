@@ -1,0 +1,27 @@
+{
+    "concat": {
+        "css": [
+            "bootstrap.min.css"
+        ],
+
+        "js": [
+            "popper.min.js",
+            "jquery.min.js",
+            "bootstrap.min.js",
+            "imagesloaded.pkgd.min.js",
+            "masonry.pkgd.min.js",
+            "isotope.pkgd.min.js"
+        ],
+
+        "commonCss": [
+            "style.css",
+            "demo.css"
+        ],
+
+        "commonJs": [
+            "components.js",
+            "common.js",
+            "demo.js"
+        ]
+    }
+}

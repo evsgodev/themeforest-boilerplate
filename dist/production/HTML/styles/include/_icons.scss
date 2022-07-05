@@ -1,0 +1,24 @@
+[class^="icon-"] {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+@if $generate-sprites {
+    /* PNG Sprites */
+    [class*="s-icon"] {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 1;
+
+        &::before {
+            content: "";
+            display: block;
+        }
+    }
+
+    @include retina-sprites($retina-groups);
+}

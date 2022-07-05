@@ -1,0 +1,38 @@
+mixin Head(data)
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='MobileOptimized', content='320')
+    meta(name='HandheldFriendly' content='True')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title=page.title ? page.title : data.title
+    meta(name='description', content=data.description)
+    meta(name='msapplication-tap-highlight', content='no')
+    meta(name='mobile-web-app-capable', content='yes')
+    meta(name='application-name', content=data.description)
+    meta(name='apple-mobile-web-app-title', content=page.title ? page.title : data.title)
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name='apple-mobile-web-app-status-bar-style', content='black')
+
+    if isPreview
+        link(rel='stylesheet', href=`${staticPath.css}/vendor.min.css`)
+        block styles
+            link(rel='stylesheet', href=`${staticPath.css}/common.css`)
+    else
+        each item in concat.css
+            link(rel='stylesheet', href=`${staticPath.css}/${item}`)
+        block styles
+            link(rel='stylesheet', href=`${staticPath.css}/style.css`)
+
+    if isModePreview
+        link(rel='stylesheet', href=`${staticPath.css}/demo.css`)
+
+    link(rel="apple-touch-icon" sizes="57x57" href=`${staticPath.img}/favicons/apple-icon-57x57.png`)
+    link(rel='apple-touch-icon', sizes='180x180', href=`${staticPath.img}/favicons/apple-touch-icon.png`)
+    link(rel='icon', type='image/png', sizes='32x32', href=`${staticPath.img}/favicons/favicon-32x32.png`)
+    link(rel='icon', type='image/png', sizes='16x16', href=`${staticPath.img}/favicons/favicon-16x16.png`)
+    // <link rel="manifest" href="img/content/favicons/site.webmanifest" />
+    link(rel='mask-icon', href=`${staticPath.img}/favicons/safari-pinned-tab.svg`, color='#5bbad5')
+    meta(name='msapplication-TileColor', content='#da532c')
+    meta(name='theme-color', content='#ffffff')
+
+    //- https://favicon.io/

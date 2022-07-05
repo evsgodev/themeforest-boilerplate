@@ -1,0 +1,13 @@
+mixin SelectInput(data={}, checkedItem, placeholder)
+    .input-select
+        select.form-control.js-select(
+            id=data.id ? data.id : undefined
+            class=data.class,
+            name=data.name,
+            data-placeholder=data.placeholder,
+            required
+        )
+            <option></option>
+            each item, index in data.items
+                - let i = index + 1;
+                option(value=i, selected=(checkedItem === i ? 'selected' : undefined))=item.val

@@ -1,0 +1,67 @@
+{% import "../../components/config.njk" as Config %}
+{% import "../../components/mixins.njk" as Mixins %}
+{% import "../../components/layout/head/head.njk" as Head %}
+{% import "../../components/layout/demo/demo.njk" as Demo %}
+{% from "../../components/layout/footer/footer.njk" import Footer %}
+
+{% macro Icon(name, width=undefined, height=width, symbols=symbolsInject, path=pathPrefix) %}
+    {{ Mixins.svg(name, width, height, symbols, path) }}
+{% endmacro %}
+
+<!DOCTYPE html>
+<html lang="{{ Config.lang }}">
+    <head>
+        {{ Head.content(head.default, pathPrefix) }}
+        {% if isPreview %}
+            <link href="{{- pathPrefix }}css/vendor.min.css" rel="stylesheet">
+            <link href="{{- pathPrefix }}css/common.css" rel="stylesheet">
+        {% else %}
+            {% for item in concat.css %}
+                <link href="{{- pathPrefix }}css/{{ item }}" rel="stylesheet">
+            {% endfor %}
+            {% block styles %}
+                <link href="{{- pathPrefix }}css/style.css" rel="stylesheet">
+            {% endblock %}
+        {% endif %}
+
+        {% if Config.isModePreview %}
+            <link href="{{- pathPrefix }}css/demo.css" rel="stylesheet">
+        {% endif %}
+    </head>
+    <body>
+        %symbols%
+        {% if isPreview or Config.isModePreview %}
+            {{ Demo.menu(demo) }}
+        {% endif %}
+
+        <div class="page-wrapper">
+            {% block header %}{% endblock %}
+            <main class="page-content">
+                {% block content %}{% endblock %}
+            </main>
+            {% block footer %}
+                {{ Footer(footer.default) }}
+            {% endblock %}
+            {% if isPreview or Config.isModePreview %}
+                {{ Demo.copyright() }}
+            {% endif %}
+        </div>
+
+        {% if isPreview %}
+            <script src="{{- pathPrefix }}js/vendor.min.js"></script>
+            <script src="{{- pathPrefix }}js/common.js"></script>
+        {% else %}
+            {% for item in concat.js %}
+                <script src="{{- pathPrefix }}js/vendor/{{ item }}"></script>
+            {% endfor %}
+            {% block scripts %}
+                <script src="{{- pathPrefix }}js/components.js"></script>
+                <script src="{{- pathPrefix }}js/common.js"></script>
+            {% endblock %}
+        {% endif %}
+
+        {% if Config.isModePreview %}
+            <script src="{{- pathPrefix }}js/demo.js"></script>
+        {% endif %}
+    </body>
+</html>

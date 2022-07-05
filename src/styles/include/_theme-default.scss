@@ -1,0 +1,5 @@
+$brand-primary: var(--primary-color);
+
+html.theme-default {
+    @import "colors";
+}

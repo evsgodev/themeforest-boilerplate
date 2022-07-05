@@ -1,0 +1,12 @@
+if isPreview
+    script(src=`${staticPath.js}/vendor.min.js`)
+    script(src=`${staticPath.js}/common.js`)
+else
+    each item in concat.js
+        script(src=`${staticPath.js}/vendor/${item}`)
+    block scripts
+        script(src=`${staticPath.js}/components.js`)
+        script(src=`${staticPath.js}/common.js`)
+
+if isModePreview
+    script(src=`${staticPath.js}/demo.js`)

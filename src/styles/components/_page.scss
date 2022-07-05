@@ -1,0 +1,22 @@
+/* Page */
+.page-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-content {
+    flex-grow: 1;
+}
+
+.container {
+    width: #{"min(100%, var(--container-width))"};
+    padding: 0 var(--container-gutter);
+    margin: 0 auto;
+}
+
+.section {
+    &__header {
+        margin-bottom: 5.625rem;
+    }
+}

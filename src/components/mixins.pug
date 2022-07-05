@@ -1,0 +1,9 @@
+-
+    const blocks = {};
+
+mixin set(key)
+    - blocks[key] = this.block
+
+mixin icon(icon, width=undefined, height=width)
+    svg(class=`icon-${icon}` width=width, height=height)&attributes(attributes)
+        use(xlink:href=symbolsInject ? `#${icon}` : `${PATH}assets/img/svg-symbols.svg#${icon}`)

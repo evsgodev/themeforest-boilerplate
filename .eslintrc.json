@@ -1,0 +1,130 @@
+{
+  "parser": "@babel/eslint-parser",
+  "extends": "airbnb-base/legacy",
+  "env": {
+    "node": true,
+    "browser": true,
+    "commonjs": true,
+    "jquery": true
+  },
+  "ignorePatterns": [
+    "**/js/vendor/*.js"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "allowImportExportEverywhere": false,
+    "ecmaFeatures": {
+      "globalReturn": false
+    }
+  },
+  "rules": {
+    "linebreak-style": 0,
+    "indent": [
+      2,
+      4,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "import/no-unresolved": [
+      0
+    ],
+    "quotes": [
+      1,
+      "single",
+      {
+        "allowTemplateLiterals": true
+      }
+    ],
+    "comma-dangle": [
+      1,
+      "never"
+    ],
+    "no-plusplus": 0,
+    "allowForLoopAfterthoughts": 0,
+    "import/prefer-default-export": 0,
+    "func-names": 0,
+    "no-console": 0,
+    "global-require": "off",
+    "class-methods-use-this": "off",
+    "no-use-before-define": "off",
+    "no-undef": "off",
+    "no-unused-vars": "off",
+    "quote-props": [
+      "error",
+      "as-needed",
+      {
+        "keywords": true,
+        "unnecessary": false
+      }
+    ],
+    "no-catch-shadow": 0,
+    "no-mixed-requires": 2,
+    "no-new-require": 2,
+    "no-path-concat": 2,
+    "global-strict": [
+      0,
+      "always"
+    ],
+    "handle-callback-err": [
+      2,
+      "err"
+    ],
+    "arrow-spacing": [
+      2,
+      {
+        "before": true,
+        "after": true
+      }
+    ],
+    "constructor-super": 2,
+    "no-confusing-arrow": 2,
+    "no-class-assign": 2,
+    "no-const-assign": 2,
+    "no-dupe-class-members": 2,
+    "no-this-before-super": 2,
+    "prefer-arrow-callback": 0,
+    "prefer-template": 0,
+    "require-yield": 2,
+    "no-var": 0,
+    "no-new": 0
+  },
+  "overrides": [
+    {
+      "files": [
+        "*.ts",
+        "*.tsx"
+      ],
+      "parser": "@typescript-eslint/parser",
+      "plugins": [
+        "@typescript-eslint"
+      ],
+      "extends": [
+        "plugin:@typescript-eslint/recommended"
+      ],
+      "rules": {
+        "arrow-spacing": "error",
+        "block-spacing": "error",
+        "new-parens": "error",
+        "no-debugger": "error",
+        "no-duplicate-imports": "error",
+        "no-multi-spaces": "error",
+        "no-tabs": "error",
+        "no-empty": "error",
+        "indent": [
+          "error",
+          4
+        ],
+        "quotes": [
+          "error",
+          "single"
+        ],
+        "array-bracket-spacing": [
+          "error",
+          "always"
+        ]
+      }
+    }
+  ]
+}

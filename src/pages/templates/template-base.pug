@@ -1,0 +1,29 @@
+block components
+    include ../../components/config
+    include ../../components/mixins
+    include ../../components/layout/head/head
+    include ../../components/layout/demo/demo
+    include ../../components/layout/header/header
+    include ../../components/layout/footer/footer
+
+doctype html
+html.no-js(lang=lang, data-theme=themeColor)
+    head
+        +Head(head.default)
+    body()&attributes(page.attrs)
+        | %symbols%
+        if isDemoChange
+            +Demo
+        .page-wrapper
+            block header
+                +Header
+            main.page-content&attributes(page.content)
+                block content
+            block footer
+                +Footer
+            if isDemoChange
+                +DemoCopyright
+        block bottom
+        include ../../components/scripts
+
+
