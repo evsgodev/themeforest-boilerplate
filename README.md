@@ -41,6 +41,5 @@ Local server http://localhost:8080/
 npm run build
 ```
 
-#### Hello! My name is Evgeny Staroverov.
-#### I'm on social networks
+#### Hello! My name is Evgeny Staroverov. I'm on social networks:
 - [Linkedin](https://www.linkedin.com/in/evgst/)
