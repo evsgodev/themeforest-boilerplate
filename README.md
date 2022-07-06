@@ -40,3 +40,11 @@ Local server http://localhost:8080/
 ```commandline
 npm run build
 ```
+
+#### Author
+Evgeny Staroverov [Team NetGon]
+
+#### I'm on social networks
+- [Linkedin](https://www.linkedin.com/in/evgst/)
+
+#### MIT License.
