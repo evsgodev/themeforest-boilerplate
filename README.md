@@ -41,10 +41,6 @@ Local server http://localhost:8080/
 npm run build
 ```
 
-#### Author
-Evgeny Staroverov [Team NetGon]
-
+#### Hello! My name is Evgeny Staroverov.
 #### I'm on social networks
 - [Linkedin](https://www.linkedin.com/in/evgst/)
-
-#### MIT License.
